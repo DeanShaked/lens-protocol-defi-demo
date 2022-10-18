@@ -22,7 +22,14 @@ export default function Home() {
     <div className="app">
       <div>
         {profiles?.map((profile, index) => {
-          return <div>{profile.id}</div>;
+          return (
+            <div className="profile_table" key={profile.id}>
+              <p>Profile ID: {profile.id}</p>
+              <p>Owner by: {profile.ownedBy} </p>
+              <p>Bio: {profile.bio}</p>
+              <p>Total Followers: {profile.stats.totalFollowers}</p>
+            </div>
+          );
         })}
       </div>
     </div>
